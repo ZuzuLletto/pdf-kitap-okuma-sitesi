@@ -18,7 +18,7 @@ Mevcut proje: `pdf-kitap-okuma-sitesi`. Build komutu `npm run build`, çıktı d
 npx wrangler pages deploy dist --project-name pdf-kitap-okuma-sitesi --branch main
 ```
 
-Cloudflare API anahtarını yalnızca ortam değişkeninde kullanın. Kaynak koduna veya GitHub'a eklemeyin. `wrangler.jsonc`, isteğe bağlı Workers statik dağıtımı içindir; mevcut yayın Pages üzerindedir.
+Cloudflare API anahtarını yalnızca ortam değişkeninde kullanın. Kaynak koduna veya GitHub'a eklemeyin. `wrangler.jsonc`, mevcut Cloudflare Pages projesi için yapılandırılmıştır.
 
 ## Saklama ve gizlilik
 
@@ -29,3 +29,4 @@ Veriler cihaz ve tarayıcıya özeldir. Tarayıcı site verilerini temizlemek ki
 ## Doğrulama
 
 Üç sayfalık örnek PDF ile ekleme, görüntüleme, sayfa geçişi, yeniden yükleme sonrasında ilerleme/not/ayraç kalıcılığı ve 390px mobil taşma kontrolü. Üretim derlemesi ve npm bağımlılık denetimi.
+
