@@ -1,1 +1,20 @@
-{"name":"sayfa-kitaplik","version":"1.0.0","private":true,"type":"module","scripts":{"dev":"vite --host 127.0.0.1","build":"vite build","deploy":"wrangler deploy"},"dependencies":{"pdfjs-dist":"^6.4.299"},"devDependencies":{"vite":"^7.0.0","wrangler":"^4.0.0"}}
+{
+  "name": "sayfa-kitaplik",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "deploy": "wrangler pages deploy dist --project-name pdf-kitap-okuma-sitesi --branch main",
+    "prebuild": "node scripts/pdf-assets.mjs",
+    "predev": "node scripts/pdf-assets.mjs"
+  },
+  "dependencies": {
+    "pdfjs-dist": "^6.4.299"
+  },
+  "devDependencies": {
+    "vite": "^7.0.0",
+    "wrangler": "^4.0.0"
+  }
+}

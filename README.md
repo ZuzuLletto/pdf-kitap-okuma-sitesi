@@ -30,3 +30,13 @@ Veriler cihaz ve tarayıcıya özeldir. Tarayıcı site verilerini temizlemek ki
 
 Üç sayfalık örnek PDF ile ekleme, görüntüleme, sayfa geçişi, yeniden yükleme sonrasında ilerleme/not/ayraç kalıcılığı ve 390px mobil taşma kontrolü. Üretim derlemesi ve npm bağımlılık denetimi.
 
+
+## Orijinal PDF görüntüsü ve kelime açıklamaları
+
+JPEG 2000 ve JBIG2 gibi taranmış PDF görüntüleri için PDF.js WASM, CMap ve standart font dosyaları build sırasında `public/pdfjs/` içine kopyalanır. Bu dosyaların dağıtıma eklenmemesi, bazı kitaplarda yalnızca metin katmanının görünmesine neden olur. Kaydedilen PDF baytları değiştirilmez; gece modu PDF renklerine filtre uygulamaz. Eski kapak önizlemeleri ilk sayfadan otomatik yenilenir. İstenirse açık sayfa kapak yapılabilir ve orijinal PDF indirilebilir.
+
+Şeffaf metin katmanı üzerinden kelimeye dokununca okunaklı yazılışı ve Türkçe Vikisözlük açıklaması gösterilir. Yalnızca sorgulanan kelime Vikisözlük API'sine gider; PDF dosyası veya sayfa görüntüsü gönderilmez. PDF'nin mevcut OCR/metin katmanındaki hatalar balonda düzeltilebilir. Metin katmanı olmayan taramalar için otomatik el yazısı tanıma uygulanmaz. İnternet ya da sözlük maddesi yoksa bulunamadı/bağlantı mesajı gösterilir; anlam uydurulmaz.
+
+Tam ekran API'si desteklendiğinde `navigationUI: hide` istenir. Desteklemeyen mobil tarayıcılarda site tarayıcı çubuklarını zorla kaldıramaz; ana ekrana ekleme yönergesi ve fullscreen/standalone web uygulaması manifesti sunulur. Uygulama modunda tarayıcı depolaması ayrı olabileceğinden kitap yeniden eklenebilir. Cihaz üzerinde uygulama kurulum testi yapılmadı.
+
+Gerçek 294 sayfalık kullanıcı PDF'siyle renkli kapak, taranmış iç sayfa, kelime ve canlı sözlük sonucu, tam ekranda balon, Esc ile çıkış, mobil düzen ve SHA-256 dosya eşitliği kontrol edildi. Kullanıcının PDF'si depoya veya yayın dosyalarına eklenmedi.
