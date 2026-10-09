@@ -17,3 +17,21 @@ body.reading-fullscreen{overflow:hidden}
 .reader.focus-mode #slider{flex-shrink:0}
 .reader.focus-mode .reader-tip{margin:8px;flex-shrink:0}
 @media(max-width:600px){.recent-cover{height:170px;max-width:105px;transform:rotate(8deg)}#fullscreen span{font-size:10px}.reader.focus-mode{padding:8px}.reader.focus-mode .reading-area{position:relative}.reader.focus-mode aside:not([hidden]){position:absolute;inset:0 20px;width:auto;height:100%;z-index:2;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:12px 20px}.reader.focus-mode .reader-tip{display:none}.reader.focus-mode .reader-tools{gap:6px}.reader.focus-mode .reader-heading h1{max-height:34px;overflow:hidden}}
+.paper-wrap{overscroll-behavior:contain;touch-action:pan-x pan-y pinch-zoom;overflow-anchor:none}
+.paper-wrap.can-swipe{touch-action:pan-y pinch-zoom}
+.swipe-strip{margin:12px auto 0;padding:12px 18px;text-align:center;color:var(--muted);font-size:11px;touch-action:pan-y pinch-zoom;border:1px solid var(--line);border-radius:6px;width:fit-content;max-width:100%;user-select:none}
+.reader.focus-mode .swipe-strip{flex-shrink:0;margin-top:6px;padding:7px 14px}
+@media(orientation:landscape) and (max-height:550px){
+ .reader.focus-mode{padding:5px 12px}
+ .reader.focus-mode .reader-heading{min-height:24px}
+ .reader.focus-mode .reader-heading h1{font-size:12px;max-height:24px;overflow:hidden}
+ .reader.focus-mode .reader-tools{padding:3px 0;flex-wrap:nowrap}
+ .reader.focus-mode .reader-tools button,.reader.focus-mode .reader-tools select{padding:4px;font-size:10px}
+ .reader.focus-mode .reading-area{padding-top:5px}
+ .reader.focus-mode .page-controls{margin:4px 0;gap:20px}
+ .reader.focus-mode .page-controls input{padding:3px}
+ .reader.focus-mode .reader-tip,.reader.focus-mode #slider{display:none}
+ .reader.focus-mode .swipe-strip{padding:5px 12px;font-size:10px;margin-top:2px}
+ .reader.focus-mode .paper-wrap{padding:8px}
+}
+@media(prefers-reduced-motion:no-preference){.swipe-strip:active{background:var(--panel)}}
